@@ -113,6 +113,19 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => env('MONGODB_URI'),
+            'host' => env('MONGODB_HOST', env('DB_HOST', '127.0.0.1')),
+            'port' => env('MONGODB_PORT', env('DB_PORT', 27017)),
+            'database' => env('MONGODB_DATABASE', env('DB_DATABASE', 'loan')),
+            'username' => env('MONGODB_USERNAME', env('DB_USERNAME')),
+            'password' => env('MONGODB_PASSWORD', env('DB_PASSWORD')),
+            'options' => [
+                'database' => env('MONGODB_AUTH_DATABASE', 'admin'),
+            ],
+        ],
+
     ],
 
     /*
